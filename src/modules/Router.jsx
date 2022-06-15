@@ -31,10 +31,10 @@ const Router = () => {
         {/* index équivalent à path='/' */}
         <Route index element={<HomePage/>}/>
         <Route path='/login' element={<Login setLogin={setLogin}/>}/>
-        <Route path='/about' element={<PrivateRoute login={login}/>}>
+        <Route path='/about' element={<PrivateRoute/>}>
           <Route path="" element={<About/>}/>
           </Route>
-          <Route path='/skills' element={<PrivateRoute login={login}/>}>
+          <Route path='/skills' element={<PrivateRoute/>}>
           <Route path="" element={<Skills/>}/>
           </Route>
       </Routes>

@@ -9,10 +9,12 @@
 // alors tu nous retourne l'enfant
 // si non, tu nous redirige vers la page "/login"
 
+import { useContext } from "react";
 import { Outlet, Navigate } from "react-router-dom";
-
-const PrivateRoute = (props) => {
-return props.login ? <Outlet/> : <Navigate to="/login" />
+import MonContext from "../context/MonContext";
+const PrivateRoute = () => {
+ const mycontext = useContext(MonContext)
+return mycontext.login ? <Outlet/> : <Navigate to="/login" />
 }
 
 export default PrivateRoute;

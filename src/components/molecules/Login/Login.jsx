@@ -1,12 +1,14 @@
-import {useState} from 'react';
+import {useContext, useState} from 'react';
+import MonContext from '../../../context/MonContext';
 
 const Login = (props) => {
 
+  const monContext = useContext(MonContext)
   const [values, setValues] = useState();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.setLogin(true);
+    monContext.setLogin(true);
   }
 
   // un simple formulaire 
